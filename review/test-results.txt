@@ -1,0 +1,25 @@
+PASS: 25 queries: complete results, order, hierarchy, resort codes
+PASS Clipboard API gets only exact code
+PASS Fallback selects only code span
+PASS Copy failure does not show success state
+PASS Row has accessible copy and contextual favorite
+PASS Render start
+PASS Render minimum length
+PASS Render empty
+PASS Render partial
+PASS Render large list
+PASS Render derived resort
+PASS Stale warning visible
+PASS Fresh metadata does not warn
+PASS Offline status uses loaded data
+PASS Online hides offline status
+PASS NFZ notes open
+PASS NFZ notes close
+PASS NFZ notes reopen once
+PASS Favorite from category persists without moving focus
+PASS Removing favorite restores focus and saves empty list
+19 presentation unit checks passed (DOM doubles, not browser).
+PASS: immutable data/scripts, complete search block, legal texts, CSP, deployment marker, cached/published/local assets
+PASS: light text token pairs >=4.5:1; minimum 5.60:1; control border >=3:1
+PASS: dark text token pairs >=4.5:1; minimum 6.68:1; control border >=3:1
+NOT CHECKED here: rendered layout, real focus, screen reader, browser clipboard, service worker execution.

@@ -1,0 +1,18 @@
+{
+  "files": {
+    "data/icd9.json": "95aff539d0dab07291c7afdbf91c275bca7fd0cb8aa0b0bab6b7e5bdd3231236",
+    "data/meta.json": "a6a18e7cd1c72d3911d8a0e8020de10518e21fe88363f4c480db54702170bd3f",
+    "resort.js": "6ed819fc7bbd56b35aa9ffa0ad0f3ca400d7583c748f38cb0eef7f409759f2dd",
+    "scripts/update.py": "59aaca5a7072ac4bc64ca715bad289d623c722bf9475e4c3bfe71a7b1b326feb",
+    "scripts/convert.py": "08092360ae5fea72db8b400e0e7eab47711f32345952569a0058813fb1141e74",
+    "scripts/check_resort.py": "7e70ab01281e9e6470d7f5925aeb2698212d39bef3acd1a9797c28f1cc4f5295",
+    ".github/dependabot.yml": "49776251bf2aa2362b194215226ffd7a718035de6c38329a9e2cf6d87b3292d8"
+  },
+  "csp": "<meta http-equiv=\"Content-Security-Policy\" content=\"default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'self'; font-src 'self'; manifest-src 'self'; worker-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'\">",
+  "footer": "Źródło danych Słownik ICD-9 PL CM, autor i właściciel: Narodowy Fundusz Zdrowia (strona słownika na nfz.gov.pl). Kody resortowe (specjalności komórek organizacyjnych): rozporządzenie Ministra Zdrowia z 17.05.2012 r. w sprawie systemu resortowych kodów identyfikacyjnych, załącznik nr 2, część VIII (tekst jednolity z 2019 r., Dz. U. poz. 173; tekst). Dane zostały przetworzone: plik NFZ (xlsx) przekształcono na format wyszukiwarki, bez zmiany nazw ani kodów procedur. Aplikacja jest nieoficjalna i nie pochodzi od NFZ ani Ministerstwa Zdrowia. Obowiązuje wersja ze strony NFZ. Zastrzeżenie. Aplikacja ma charakter pomocniczy i nie zastępuje oficjalnego słownika NFZ ani decyzji lekarza. Ostateczny wybór kodu na skierowaniu należy do lekarza, a autorka aplikacji nie odpowiada za skutki użycia kodów. Zauważyłeś błąd w kodzie albo w działaniu strony? Zgłoś uwagę (potrzebne jest konto GitHub). Na skierowaniu do poradni specjalistycznej zwykle wystarcza kod 89.00 albo kod konkretnej konsultacji. Na badanie wpisuje się kod tego badania. Kod zawsze dobiera lekarz. Ikona na telefonie: Android (Chrome) menu ⋮ → „Dodaj do ekranu głównego”. iPhone (Safari) Udostępnij → „Do ekranu początkowego”. Po pierwszym otwarciu aplikacja działa także bez internetu.",
+  "legal_js": {
+    "RES_BANNER": "'<div class=\"resban\"><b>Skąd te kody.</b> Zestawienie oparte na <b>rozporządzeniu Ministra Zdrowia z 17.05.2012 r. w sprawie systemu resortowych kodów identyfikacyjnych</b>, załącznik nr 2, część VIII (tekst jednolity z 2019 r., Dz. U. poz. 173; jedyna późniejsza zmiana, z 2017 r., jest w tym tekście uwzględniona). To kody <b>komórki organizacyjnej</b> (poradni, oddziału), nie kody procedur ICD-9. Kody dla dzieci wylicza się wg § 9 ust. 4 (kod dla dorosłych + 1).</div>'",
+    "ELI_LINK": "'<a href=\"https://isap.sejm.gov.pl/isap.nsf/DocDetails.xsp?id=WDU20120000594\" target=\"_blank\" rel=\"noopener\">ISAP: rozporządzenie z 2012 r. (zakładka „Akty zmieniające”)</a> · <a href=\"https://eli.gov.pl/api/acts/DU/2019/173/text.html\" target=\"_blank\" rel=\"noopener\">tekst jednolity z 2019 r.</a> · <a href=\"https://www.nfz.gov.pl/aktualnosci/aktualnosci-centrali/rozszerzenie-listy-specjalnosci-z-rehabilitacji-w-warunkach-stacjonarnych-sprawozdawanych-w-aplikacji-ap-kolce,8682.html\" target=\"_blank\" rel=\"noopener\">komunikat NFZ (AP-KOLCE)</a>'"
+  },
+  "algorithm_sha256": "d02d7d7fca3fda91b84dd7ef525c23254165fcd4451fee13fbd6b63d7fdd2300"
+}

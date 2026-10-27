@@ -1,0 +1,30 @@
+{
+  "index.html": {
+    "baseline": 17442,
+    "clinical": 5997
+  },
+  "app.js": {
+    "baseline": 23713,
+    "clinical": 25669
+  },
+  "styles.css": {
+    "baseline": 0,
+    "clinical": 11888
+  },
+  "sw.js": {
+    "baseline": 1359,
+    "clinical": 1373
+  },
+  "manifest.webmanifest": {
+    "baseline": 620,
+    "clinical": 620
+  },
+  "resort.js": {
+    "baseline": 18893,
+    "clinical": 18893
+  },
+  "data/icd9.json": {
+    "baseline": 938874,
+    "clinical": 938874
+  }
+}

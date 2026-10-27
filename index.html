@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'self'; font-src 'self'; manifest-src 'self'; worker-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Kody do skierowań</title>
+<meta name="description" content="Wyszukiwarka kodów do skierowań: kody procedur ICD-9 PL (słownik NFZ) i kody resortowe komórek (poradni, oddziałów). Działa bez internetu.">
+<meta name="theme-color" content="#f4f7f6" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#101917" media="(prefers-color-scheme: dark)">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Kody do skierowań">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a class="skip-link" href="#q">Przejdź do wyszukiwania</a>
+
+<main class="wrap" id="main">
+  <header class="top">
+    <h1>Kody do skierowań</h1>
+    <p class="sub">Pełny słownik procedur NFZ. Wpisz badanie lub konsultację, dotknij kodu, żeby go skopiować.</p>
+    <div class="ver"><span class="chip" id="verChip">ICD-9 PL CM v5.90</span><span id="verInfo">10 059 kodów</span></div>
+  </header>
+
+  <div class="searchbar" role="search">
+    <label class="search-label" for="q">Szukaj nazwy lub kodu</label>
+    <div class="field">
+      <span class="search-icon" aria-hidden="true"></span>
+      <input id="q" type="search" inputmode="search" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="np. usg tarczycy, rtg klatki">
+      <button class="clear" id="clear" type="button" aria-label="Wyczyść wyszukiwanie" hidden>×</button>
+    </div>
+  </div>
+
+  <div class="notices">
+    <div id="networkStatus" class="notice" role="status" hidden></div>
+    <div id="freshnessWarning" class="notice warning" role="status" hidden></div>
+  </div>
+  <p id="searchStatus" class="sr-only" role="status" aria-live="polite" aria-atomic="true"></p>
+  <div id="favWrap" hidden>
+    <div class="section-h"><h2>Twoje ulubione</h2></div>
+    <div class="list" id="favList"></div>
+  </div>
+
+  <div id="resWrap" hidden>
+    <div class="section-h"><h2 id="resTitle">Wyniki</h2><span id="resCount"></span></div>
+    <div class="list" id="results"></div>
+    <div id="resortOut"></div>
+  </div>
+
+  <p class="notice" id="loadMsg" role="status">Wczytuję słownik…</p>
+  <div id="catWrap" hidden>
+    <div class="section-h"><h2>Przeglądaj słowniki</h2></div>
+    <button class="catbtn" id="catToggle" type="button" aria-expanded="false" aria-controls="catList">
+      <span class="chev" aria-hidden="true">▸</span>
+      <span>Przeglądaj wszystkie kategorie</span>
+      <span class="cnt" id="catCount"></span>
+    </button>
+    <div class="list tree" id="catList" hidden></div>
+    <div class="tobar" id="catTop" hidden><button class="btn ghost" type="button" data-top>↑ Na górę</button></div>
+    <div id="resCat" hidden style="margin-top:14px">
+      <button class="catbtn" id="resToggle" type="button" aria-expanded="false" aria-controls="resList">
+        <span class="chev" aria-hidden="true">▸</span>
+        <span>Kody resortowe (poradnie, oddziały)</span>
+        <span class="cnt" id="resCount2"></span>
+      </button>
+      <div class="list" id="resList" hidden></div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="src" id="srcBox">
+      <h2>Źródło danych</h2>
+      <p>Słownik <em>ICD-9 PL CM</em>, autor i właściciel: Narodowy Fundusz Zdrowia (<a href="https://www.nfz.gov.pl/dla-swiadczeniodawcy/slowniki/pliki-icd-9-pl/" target="_blank" rel="noopener">strona słownika na nfz.gov.pl</a>).
+      <span id="srcVer"></span></p>
+      <p id="checkInfo"></p>
+      <p><strong>Kody resortowe</strong> (specjalności komórek organizacyjnych): rozporządzenie Ministra Zdrowia z 17.05.2012 r. w sprawie systemu resortowych kodów identyfikacyjnych, załącznik nr 2, część VIII (tekst jednolity z 2019 r., Dz. U. poz. 173; <a href="https://eli.gov.pl/api/acts/DU/2019/173/text.html" target="_blank" rel="noopener">tekst</a>). <span id="resInfo"></span></p>
+      <p>Dane zostały przetworzone: plik NFZ (xlsx) przekształcono na format wyszukiwarki, bez zmiany nazw ani kodów procedur. Aplikacja jest nieoficjalna i nie pochodzi od NFZ ani Ministerstwa Zdrowia. Obowiązuje wersja ze strony NFZ.</p>
+      <p class="legal"><strong>Zastrzeżenie.</strong> Aplikacja ma charakter pomocniczy i nie zastępuje oficjalnego słownika NFZ ani decyzji lekarza. Ostateczny wybór kodu na skierowaniu należy do lekarza, a autorka aplikacji nie odpowiada za skutki użycia kodów. Zauważyłeś błąd w kodzie albo w działaniu strony? <a href="https://github.com/jusiag/kody-skierowan/issues" target="_blank" rel="noopener">Zgłoś uwagę</a> (potrzebne jest konto GitHub).</p>
+    </div>
+    <span>Na skierowaniu do poradni specjalistycznej zwykle wystarcza kod 89.00 albo kod konkretnej konsultacji. Na badanie wpisuje się kod tego badania. Kod zawsze dobiera lekarz.</span>
+    <span class="hint install-info">Ikona na telefonie: Android (Chrome) menu ⋮ → „Dodaj do ekranu głównego”. iPhone (Safari) Udostępnij → „Do ekranu początkowego”. Po pierwszym otwarciu aplikacja działa także bez internetu.</span>
+  </footer>
+</main>
+
+
+<div class="toast" id="toast" aria-hidden="true"></div>
+<div class="sr-only" id="announcement" role="status" aria-live="polite" aria-atomic="true"></div>
+
+<script id="nfzmeta" type="application/json">{}</script>
+<script src="resort.js" defer></script>
+<script src="app.js" defer></script>
+</body>
+</html>
