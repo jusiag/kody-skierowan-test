@@ -126,6 +126,7 @@
   }
 
   function copyButton(code) {
+    if (byCode.get(code)?.hasKids || kids.get(code)?.length) return `<span class="category-code">${esc(code)}</span>`;
     return `<button class="code" type="button" data-copy="${esc(code)}" aria-label="Kopiuj kod ${esc(code)}"><span class="code-value">${esc(code)}</span><span class="copy-icon" aria-hidden="true"></span></button>`;
   }
   function topButton(count) {
@@ -267,6 +268,7 @@
   let toastT;
   function toast(msg) { const t = $("toast"); clearTimeout(toastT); t.textContent = ""; $("announcement").textContent = ""; requestAnimationFrame(() => { t.textContent = msg; $("announcement").textContent = msg; }); toastT = setTimeout(() => (t.textContent = ""), 2600); }
   async function copy(code, btn) {
+    if (byCode.get(code)?.hasKids || kids.get(code)?.length) return;
     let ok = false;
     try { await navigator.clipboard.writeText(code); ok = true; } catch {}
     if (!ok) {

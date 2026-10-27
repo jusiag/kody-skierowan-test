@@ -136,3 +136,6 @@ footer{font-size:13px;line-height:1.7;color:var(--muted);border-top:1px solid va
 @media(prefers-reduced-motion:no-preference){.code,.star{transition:background-color .12s,color .12s}}
 @media(forced-colors:active){.code,.catbtn,.field input{border:1px solid ButtonText}.star.on{outline:2px solid Highlight}.copy-icon{forced-color-adjust:auto}mark{outline:1px solid Highlight}}
 .tobar:empty{display:none}
+
+/* Category identifiers are labels, not clipboard controls. */
+.category-code{display:inline-flex;align-items:center;justify-self:start;min-height:44px;padding:8px 0;font:600 16px/1.4 var(--font-code);font-variant-numeric:tabular-nums;color:var(--muted);white-space:nowrap}
