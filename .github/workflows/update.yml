@@ -97,7 +97,7 @@ jobs:
           open("_site/index.html", "w", encoding="utf-8").write(html)
           PY
 
-      - uses: actions/upload-pages-artifact@v3
+      - uses: actions/upload-pages-artifact@v5
         with:
           path: _site
 
