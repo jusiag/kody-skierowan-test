@@ -30,7 +30,7 @@ jobs:
       nfz: ${{ steps.upd.outcome }}
       resort: ${{ steps.res.outcome }}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
 
       - uses: actions/setup-python@v5
         with:
@@ -74,7 +74,7 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       # Bierzemy najnowszy stan gałęzi, razem z commitem z poprzedniego zadania.
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
         with:
           ref: ${{ github.event.repository.default_branch }}
 
